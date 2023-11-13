@@ -34,3 +34,61 @@ let test = (age) => {
 
 test(15)
 test(19)
+
+
+
+
+//hoisting
+
+console.log(data)
+
+data = 17
+
+console.log(data)
+
+var data
+
+
+
+
+// Execution context
+
+// 1) Memory execution phase
+
+// js allocates memory to variables and functions of the entire program
+
+// variables -> undefined
+// functions -> body of function is stored in memory
+
+
+// 2) Code execution
+
+// variables -> values
+// data = 17
+
+// functions -> run the functions
+
+// hoisting -> access the varibales and functionseven before decalration
+
+console.log(sum3)
+console.log(myFunc)
+
+
+let sum3 = (a,b)=>a+b   //arrow functions are not hoisted
+
+function myFunc(){
+    console.log('Hi')
+}
+
+
+// var auth = token authoristion  //integer
+
+auth = "strisknnf"
+
+//try to use let and const wherever you want  
+
+
+// var adminAccess = "ajdhajsd"
+
+// var adminAccess = 
+
