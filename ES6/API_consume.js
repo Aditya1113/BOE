@@ -1,23 +1,29 @@
 let api = "https://jsonplaceholder.typicode.com/users";
-  
-//used to consume api
-let getRemoteData = (api) => {
 
-  fetch(api)
-    .then((response) => response.json())
-    .then((data) => {
-      appendToHtml(data);
-    })
-    .catch((error) => console.log(error));
+//used to consume api (using callback)
+// let getRemoteData = (api) => {
+
+//   fetch(api)
+//     .then((response) => response.json())
+//     .then((data) => {
+//       appendToHtml(data);
+//     })
+//     .catch((error) => console.log(error));
+// };
+
+//used to consume api (using async/await)
+let getRemoteData = async (api) => {
+  let response = await fetch(api);
+
+  let result = await response.json();
+
+  appendToHtml(result);
 };
 
 getRemoteData(api);
 
-
 //used to display data in a tabular format
 let appendToHtml = (data) => {
-  
-
   for (let users of data) {
     let tr = document.createElement("tr");
     let td_1 = document.createElement("td");
