@@ -6,6 +6,7 @@ import Student from "./Components/Student";
 import MovieComp from "./Components/MovieComp";
 import People from "./Components/People";
 import Form from "./Components/Form";
+import TodoList from "./Components/TodoList";
 
 const App = () => {
   const personInfo = {
@@ -31,7 +32,9 @@ const App = () => {
       <Student students={StudentDetails}/>
       <MovieComp/> */}
       {/* <People/> */}
-      <Form/>
+      {/* <Form/> */}
+      <TodoList/>
+
     </div>
   );
 };
