@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header = ({ name, age }) => {
+const Header = ({ name, age,isAdmin }) => {
   // props={
   //     name
   // }
@@ -8,7 +8,7 @@ const Header = ({ name, age }) => {
 
   return (
     <div>
-      Welcome {name}..! {age}
+      Welcome {name}..! {age} {isAdmin?"Yes":"No"}
     </div>
   );
 };
