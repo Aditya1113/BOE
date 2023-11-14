@@ -25,6 +25,7 @@ const App = () => {
       <Header name="Kerry Smith" age={37} />
 
       <Person personDetails={personInfo} />
+
       <Student students={StudentDetails}/>
       <MovieComp/>
     </div>
