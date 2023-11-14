@@ -23,7 +23,7 @@ const TodoList = () => {
   const AddTodo = () => {
     console.log("inside add");
 
-    const foundTodo = todoItems.find((item) => item.title === newTodo);
+    const foundTodo = todoItems.find((item) => item.title.toLowerCase() === newTodo.toLowerCase());
 
     if (foundTodo) {
       alert("Oops Already There");
