@@ -13,4 +13,8 @@ const Header = ({ name, age,isAdmin }) => {
   );
 };
 
+Header.defaultProps = {
+  isAdmin:true
+}
+
 export default Header;
