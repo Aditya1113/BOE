@@ -3,7 +3,7 @@ import React from "react";
 const Student = (props) => {
 
     const sayHello=(name)=>{
-            alert(`Hi ${name}`)
+            alert("hi")
     }
   return (
     <div>

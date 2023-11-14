@@ -4,6 +4,7 @@ import Header from "./Components/Header";
 import Person from "./Components/Person";
 import Student from "./Components/Student";
 import MovieComp from "./Components/MovieComp";
+import People from "./Components/People";
 
 const App = () => {
   const personInfo = {
@@ -20,14 +21,15 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header name="Peter Parker" age={24} isAdmin={false} />
+      {/* <Header name="Peter Parker" age={24} isAdmin={false} />
       <Header name="Rose Dawson" />
       <Header name="Kerry Smith" age={37} />
 
       <Person personDetails={personInfo} />
 
       <Student students={StudentDetails}/>
-      <MovieComp/>
+      <MovieComp/> */}
+      <People/>
     </div>
   );
 };
