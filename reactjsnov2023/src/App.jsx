@@ -7,6 +7,7 @@ import MovieComp from "./Components/MovieComp";
 import People from "./Components/People";
 import Form from "./Components/Form";
 import TodoList from "./Components/TodoList";
+import UseEffectDemo from "./Components/UseEffectDemo";
 
 const App = () => {
   const personInfo = {
@@ -33,8 +34,8 @@ const App = () => {
       <MovieComp/> */}
       {/* <People/> */}
       {/* <Form/> */}
-      <TodoList/>
-
+      {/* <TodoList/> */}
+      <UseEffectDemo/>
     </div>
   );
 };
