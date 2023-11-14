@@ -3,6 +3,7 @@ import React from "react";
 import Header from "./Components/Header";
 import Person from "./Components/Person";
 import Student from "./Components/Student";
+import MovieComp from "./Components/MovieComp";
 
 const App = () => {
   const personInfo = {
@@ -25,6 +26,7 @@ const App = () => {
 
       <Person personDetails={personInfo} />
       <Student students={StudentDetails}/>
+      <MovieComp/>
     </div>
   );
 };
