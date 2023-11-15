@@ -12,6 +12,7 @@ import UseContextDemo from "./Components/UseContext/UseContextDemo";
 import UseRefDemo2 from "./Components/UseRef/UseRefDemo2";
 import QuizApp from "./QuizApp/QuizApp";
 import UseMemoDemo from "./Components/UseMemoDemo";
+import UseTransitionHook from "./Components/UseTransitionHook";
 import UseCallBackDemo from "./Components/UseCallBack/UseCallBackDemo";
 
 const App = () => {
@@ -46,7 +47,8 @@ const App = () => {
       {/* <UseRefDemo/> */}
       {/* <UseRefDemo2/> */}
       {/* <UseMemoDemo/> */}
-      <UseCallBackDemo/>
+      {/* <UseCallBackDemo/> */}
+      <UseTransitionHook/>
     </div>
   );
 };
