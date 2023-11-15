@@ -14,6 +14,7 @@ import QuizApp from "./QuizApp/QuizApp";
 import UseMemoDemo from "./Components/UseMemoDemo";
 import UseTransitionHook from "./Components/UseTransitionHook";
 import UseCallBackDemo from "./Components/UseCallBack/UseCallBackDemo";
+import Counter from "./Components/Counter";
 
 const App = () => {
   const personInfo = {
@@ -48,7 +49,8 @@ const App = () => {
       {/* <UseRefDemo2/> */}
       {/* <UseMemoDemo/> */}
       {/* <UseCallBackDemo/> */}
-      <UseTransitionHook/>
+      {/* <UseTransitionHook/> */}
+      <Counter/>
     </div>
   );
 };
