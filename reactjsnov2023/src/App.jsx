@@ -20,6 +20,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Home from "./Views/Home";
 import Menu from "./Components/Menu";
 import About from "./Views/About";
+import ViewNotFound from "./Views/ViewNotFound";
 
 
 const App = () => {
@@ -68,6 +69,7 @@ const App = () => {
             <Route path="/" element={<Navigate to="/home"/>}/>
             <Route path='home' element={<Home/>}/>
             <Route path='about' element={<About/>}/>
+            <Route path="*" element = {<ViewNotFound/>}/>
           </Routes>
       
       
