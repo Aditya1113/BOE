@@ -12,6 +12,7 @@ import UseContextDemo from "./Components/UseContext/UseContextDemo";
 import UseRefDemo2 from "./Components/UseRef/UseRefDemo2";
 import QuizApp from "./QuizApp/QuizApp";
 import UseMemoDemo from "./Components/UseMemoDemo";
+import UseCallBackDemo from "./Components/UseCallBack/UseCallBackDemo";
 
 const App = () => {
   const personInfo = {
@@ -44,7 +45,8 @@ const App = () => {
       {/* <QuizApp/> */}
       {/* <UseRefDemo/> */}
       {/* <UseRefDemo2/> */}
-      <UseMemoDemo/>
+      {/* <UseMemoDemo/> */}
+      <UseCallBackDemo/>
     </div>
   );
 };
