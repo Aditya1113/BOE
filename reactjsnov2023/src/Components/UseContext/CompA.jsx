@@ -1,16 +1,21 @@
 import React, { createContext, useState } from 'react'
 import CompB from './CompB'
 
-export const userContext = createContext()
+export const nameContext = createContext('')
+export const AgeContext = createContext(0)
 
 const CompA = () => {
-    const [username, setUsername] = useState('Peter Parker')
+    
+
+  
   return (
-    <userContext.Provider value={username}>
+    <nameContext.Provider value="Mike">
+         <AgeContext.Provider value={23}>
 
-            <CompB />
+           { <CompB/>}
+           </AgeContext.Provider>
 
-    </userContext.Provider>
+    </nameContext.Provider>
    
   )
 }
