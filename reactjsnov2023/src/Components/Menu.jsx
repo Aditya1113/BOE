@@ -1,7 +1,22 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 
 const Menu = () => {
+  const [role, setRole] = useState("");
+  const navigate = useNavigate()
+
+  const route = useLocation()
+
+  useEffect(() => {
+    let myRole = sessionStorage.getItem("role");
+    setRole(myRole);
+  },[route.pathname]);
+
+  const logout=()=>{
+    sessionStorage.removeItem('role')
+    alert('logout successfully')
+    navigate('/login')
+  }
   return (
     <div>
       <nav>
@@ -10,19 +25,25 @@ const Menu = () => {
             K O E N I G
           </Link>
           <ul id="nav-mobile" className="right hide-on-med-and-down">
-            <li>
-              <Link to="/home">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-            <li>
-              <Link to="/profile">Profile</Link>
-            </li>
+            {role === "admin" || role === "guest" ? (
+              <>
+                <li>
+                  <Link to="/home">Home</Link>
+                </li>
+                {role === "admin" && (
+                  <li>
+                    <Link to="/about">About</Link>
+                  </li>
+                )}
+                <li>
+                  <button className="orange darken-4 waves-effect btn btn-small" onClick={logout}>Logout</button>
+                </li>
+              </>
+            ) : (
+              <li>
+                <Link to="/login">Login</Link>
+              </li>
+            )}
           </ul>
         </div>
       </nav>
