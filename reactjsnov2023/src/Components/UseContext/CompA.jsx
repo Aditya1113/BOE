@@ -1,23 +1,14 @@
-import React, { createContext, useState } from 'react'
-import CompB from './CompB'
+import React, { createContext, useState } from "react";
+import CompB from "./CompB";
 
-export const nameContext = createContext('')
-export const AgeContext = createContext(0)
+export const userContext = createContext({});
 
 const CompA = () => {
-    
-
-  
   return (
-    <nameContext.Provider value="Mike">
-         <AgeContext.Provider value={23}>
+    <userContext.Provider value={{ username: "Mike", age: 32 }}>
+      <CompB />
+    </userContext.Provider>
+  );
+};
 
-           { <CompB/>}
-           </AgeContext.Provider>
-
-    </nameContext.Provider>
-   
-  )
-}
-
-export default CompA
+export default CompA;

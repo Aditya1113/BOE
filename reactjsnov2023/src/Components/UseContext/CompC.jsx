@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
-import { AgeContext, nameContext } from './CompA'
+import { AgeContext, nameContext, userContext } from './CompA'
 
 const CompC = () => {
 
-const username = useContext(nameContext)
-const age = useContext(AgeContext)
+const {username,age} = useContext(userContext)
+
 
   return (
     <div>
