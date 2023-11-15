@@ -15,8 +15,12 @@ import UseMemoDemo from "./Components/UseMemoDemo";
 import UseTransitionHook from "./Components/UseTransitionHook";
 import UseCallBackDemo from "./Components/UseCallBack/UseCallBackDemo";
 import Counter from "./Components/Counter";
-
 import Layout from "./Components/Layout";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import Home from "./Views/Home";
+import Menu from "./Components/Menu";
+import About from "./Views/About";
+
 
 const App = () => {
   const personInfo = {
@@ -54,7 +58,20 @@ const App = () => {
       {/* <UseTransitionHook/> */}
       {/* <Counter/> */}
 
-      <Layout/>
+      {/* <Layout/> */}
+
+
+
+      <BrowserRouter>
+      <Menu/>
+          <Routes>
+            <Route path="/" element={<Navigate to="/home"/>}/>
+            <Route path='home' element={<Home/>}/>
+            <Route path='about' element={<About/>}/>
+          </Routes>
+      
+      
+      </BrowserRouter>
     </div>
   );
 };
