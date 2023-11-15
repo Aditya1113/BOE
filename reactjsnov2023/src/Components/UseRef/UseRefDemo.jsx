@@ -11,22 +11,23 @@ import React, { useEffect, useRef, useState } from 'react'
 const UseRefDemo = () => {
 
     const [userInput,setUserInput] = useState('')
-    const [count,setCount] = useState()
+    // const [count,setCount] = useState()
 
-    // const count = useRef(0)
+    const count = useRef(0)
 
     console.log(count)
 
     useEffect(()=>{
-        setCount(prev=>prev+1)   //updating the state
-        // count.current++;
+        // setCount(prev=>prev+1)   //updating the state
+        count.current++;
     })
   return (
 
     <div>
         <input type="text" value={userInput}
         onChange={(e)=>setUserInput(e.target.value)}/>
-    <p>The number of times comp rerender : {count}</p>
+    {/* <p>The number of times comp rerender : {count}</p> */}
+    <p>The number of times comp rerender : {count.current}</p>
     </div>
 
   )
