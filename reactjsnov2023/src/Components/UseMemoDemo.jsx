@@ -25,7 +25,8 @@ const UseMemoDemo = () => {
         console.warn('isEven called')
         let i =0;
         while(i<2000000000)i++
-        return counter1%2===0
+        return counter1%2===0      
+        // return counter1%2===0   from broswer cache
     },[counter1])
 
     
@@ -33,6 +34,7 @@ const UseMemoDemo = () => {
     <div>
         <button onClick={incrementOne}>Counter 1 {counter1}</button>
         {/* <span>{isEven()?'Even':'Odd'}</span> */}
+
         <span>{isEven?'Even':'Odd'}</span>
         <button onClick={incrementTwo}>Counter 2 {counter2}</button>
 
