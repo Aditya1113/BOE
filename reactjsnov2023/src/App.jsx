@@ -9,6 +9,7 @@ import Form from "./Components/Form";
 import TodoList from "./Components/TodoList";
 import UseEffectDemo from "./Components/UseEffectDemo";
 import UseContextDemo from "./Components/UseContext/UseContextDemo";
+import QuizApp from "./QuizApp/QuizApp";
 
 const App = () => {
   const personInfo = {
@@ -37,7 +38,8 @@ const App = () => {
       {/* <Form/> */}
       {/* <TodoList/> */}
       {/* <UseEffectDemo/> */}
-      <UseContextDemo/>
+      {/* <UseContextDemo/> */}
+      <QuizApp/>
     </div>
   );
 };
