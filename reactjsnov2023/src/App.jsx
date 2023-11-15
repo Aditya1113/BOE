@@ -11,6 +11,7 @@ import UseEffectDemo from "./Components/UseEffectDemo";
 import UseContextDemo from "./Components/UseContext/UseContextDemo";
 import UseRefDemo2 from "./Components/UseRef/UseRefDemo2";
 import QuizApp from "./QuizApp/QuizApp";
+import UseMemoDemo from "./Components/UseMemoDemo";
 
 const App = () => {
   const personInfo = {
@@ -42,7 +43,8 @@ const App = () => {
       {/* <UseContextDemo/> */}
       {/* <QuizApp/> */}
       {/* <UseRefDemo/> */}
-      <UseRefDemo2/>
+      {/* <UseRefDemo2/> */}
+      <UseMemoDemo/>
     </div>
   );
 };
