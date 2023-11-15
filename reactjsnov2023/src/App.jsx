@@ -16,6 +16,8 @@ import UseTransitionHook from "./Components/UseTransitionHook";
 import UseCallBackDemo from "./Components/UseCallBack/UseCallBackDemo";
 import Counter from "./Components/Counter";
 
+import Layout from "./Components/Layout";
+
 const App = () => {
   const personInfo = {
     email: "peter@gmail.com",
@@ -50,7 +52,9 @@ const App = () => {
       {/* <UseMemoDemo/> */}
       {/* <UseCallBackDemo/> */}
       {/* <UseTransitionHook/> */}
-      <Counter/>
+      {/* <Counter/> */}
+
+      <Layout/>
     </div>
   );
 };
