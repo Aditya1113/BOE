@@ -8,6 +8,7 @@ import People from "./Components/People";
 import Form from "./Components/Form";
 import TodoList from "./Components/TodoList";
 import UseEffectDemo from "./Components/UseEffectDemo";
+import UseContextDemo from "./Components/UseContext/UseContextDemo";
 
 const App = () => {
   const personInfo = {
@@ -35,7 +36,8 @@ const App = () => {
       {/* <People/> */}
       {/* <Form/> */}
       {/* <TodoList/> */}
-      <UseEffectDemo/>
+      {/* <UseEffectDemo/> */}
+      <UseContextDemo/>
     </div>
   );
 };
