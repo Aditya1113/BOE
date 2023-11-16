@@ -86,6 +86,7 @@ import About from "./Views/About";
 import Login from "./Views/Login";
 import ViewNotFound from "./Views/ViewNotFound";
 import Profile from "./Views/Profile";
+import Protected from "./Views/Protected";
 
 const App = () => {
   return (
@@ -94,10 +95,10 @@ const App = () => {
         <Menu />
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
-          <Route path="home" element={<Home />} />
-          <Route path="about" element={<About />} />
+          <Route path="home" element={<Protected Component={Home}/>} />
+          <Route path="about" element={<Protected Component={About}/>}/>
           <Route path="login" element={<Login />} />
-          <Route path="profile" element={<Profile />} />
+          <Route path="profile" element={<Protected Component={Profile}/>} />
           <Route path="*" element={<ViewNotFound />} />
         </Routes>
       </BrowserRouter>
