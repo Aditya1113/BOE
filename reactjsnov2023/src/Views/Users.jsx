@@ -2,13 +2,27 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 const Users = () => {
-  const [userDetails, setUserDetails] = useState([]);
+  const [userDetails, setUserDetails] = useState();
+
+const fetchData = async()=>{
+    try{
+        const resposne = await  axios.get("https://jsonplaceholder.typicode.com/users")
+        // console.log(resposne.data)
+        setUserDetails(resposne.data)
+    }
+
+    catch(error){
+        console.log("Error fetching data",error)
+    }
+}
 
   useEffect(() => {
-    axios
-      .get("https://jsonplaceholder.typicode.com/users")
-      .then((res) => setUserDetails(res.data))
-      .catch((error) => console.log(error));
+    // axios
+    //   .get("https://jsonplaceholder.typicode.com/users")
+    //   .then((res) => setUserDetails(res.data))
+    //   .catch((error) => console.log(error));
+
+    fetchData()
   }, []);
   return (
     <div className="container">
