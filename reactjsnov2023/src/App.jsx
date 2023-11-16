@@ -88,6 +88,7 @@ import ViewNotFound from "./Views/ViewNotFound";
 import Profile from "./Views/Profile";
 import Protected from "./Views/Protected";
 import Users from "./Views/Users";
+import UserDetails from "./Views/UserDetails";
 
 const App = () => {
   return (
@@ -100,6 +101,7 @@ const App = () => {
           <Route path="about" element={<Protected Component={About}/>}/>
           <Route path="login" element={<Login />} />
           <Route path="users" element={<Users />} />
+          <Route path="users/:id" element={<UserDetails />} />
           <Route path="profile" element={<Protected Component={Profile}/>} />
           <Route path="*" element={<ViewNotFound />} />
         </Routes>
