@@ -21,10 +21,14 @@ const EditUser = () => {
           [event.target.name]: event.target.value,
         });
       };
+
     
       useEffect(()=>{
         setUserFormData(dataobj)
+        console.log("ufd",userFormData)
       },[])
+
+      console.log("ufdo",userFormData)
       const UpdateProcess = () => {
         axios.put(`http://localhost:3001/users/${userFormData.id}`,userFormData)
         .then(res=>{
