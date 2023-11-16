@@ -89,6 +89,9 @@ import Profile from "./Views/Profile";
 import Protected from "./Views/Protected";
 import Users from "./Views/Users";
 import UserDetails from "./Views/UserDetails";
+import Personal from "./Views/NestedRoutes/Personal";
+import Address from "./Views/NestedRoutes/Address";
+import Company from "./Views/NestedRoutes/Company";
 
 const App = () => {
   return (
@@ -97,13 +100,17 @@ const App = () => {
         <Menu />
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
-          <Route path="home" element={<Protected Component={Home}/>} />
-          <Route path="about" element={<Protected Component={About}/>}/>
+          <Route path="home" element={<Protected Component={Home} />} />
+          <Route path="about" element={<Protected Component={About} />} />
           <Route path="login" element={<Login />} />
           <Route path="users" element={<Users />} />
           <Route path="users/:id" element={<UserDetails />} />
-          <Route path="userdetails" element={<UserDetails />} />
-          <Route path="profile" element={<Protected Component={Profile}/>} />
+          <Route path="userdetails" element={<UserDetails />}>
+            <Route path="personal" element={<Personal />} />
+            <Route path="address" element={<Address/>} />
+            <Route path="company" element={<Company/>} />
+          </Route>
+          <Route path="profile" element={<Protected Component={Profile} />} />
           <Route path="*" element={<ViewNotFound />} />
         </Routes>
       </BrowserRouter>
