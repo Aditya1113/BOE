@@ -94,6 +94,7 @@ import Address from "./Views/NestedRoutes/Address";
 import Company from "./Views/NestedRoutes/Company";
 import DetailsInfo from "./Views/NestedRoutes/DetailsInfo";
 import AddUser from "./Views/AddUser";
+import EditUser from "./Views/EditUser";
 
 const App = () => {
   return (
@@ -107,6 +108,7 @@ const App = () => {
           <Route path="login" element={<Login />} />
           <Route path="users" element={<Users />} />
           <Route path="user/create" element={<AddUser />} />
+          <Route path="users/user/edit" element={<EditUser />} />
           <Route path="users/:id" element={<UserDetails />} />
           <Route path="userdetails" element={<UserDetails />}>
             <Route index element={<DetailsInfo type='personal' />}/>

@@ -45,6 +45,7 @@ const fetchData = async()=>{
                 </td>
                 <td>{user.name}</td>
                 <td>{user.username}</td>
+                <Link to='user/edit/' state={user} className="btn btn-small orange waves-effect waves-light">Edit</Link>
               </tr>
             ))
           ) : (

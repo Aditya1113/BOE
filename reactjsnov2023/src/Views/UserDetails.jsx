@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
+import { Link, Outlet, Route, useLocation, useNavigate } from "react-router-dom";
 
 const UserDetails = () => {
-  const [userInfo, setUserInfo] = useState();
+  const [userInfo, setUserInfo] = useState({});
 
   //obtaining route parameter
   // const { id } = useParams();
@@ -17,11 +17,14 @@ const UserDetails = () => {
   };
 
   useEffect(() => {
+
+    const userData = location.state?.data;
+
+    if(userData){
     setUserInfo(location.state?.data);
-    if (location.pathname === "/userdetails") {
-      navigate("/userdetails/personal", { state: { personal: personal } });
     }
-  }, []);
+   
+  }, [location.state?.data,location.pathname]);
 
   return (
     <div className="container">
