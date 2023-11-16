@@ -13,7 +13,9 @@ const Protected = (props) => {
         if(!login){
             navigate('/login')
         }
-    })
+        else if(login==='guest')
+            navigate('/home')
+    },[navigate])
 
   return (
     <Component/>
