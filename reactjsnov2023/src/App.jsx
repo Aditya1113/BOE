@@ -102,6 +102,7 @@ const App = () => {
           <Route path="login" element={<Login />} />
           <Route path="users" element={<Users />} />
           <Route path="users/:id" element={<UserDetails />} />
+          <Route path="userdetails" element={<UserDetails />} />
           <Route path="profile" element={<Protected Component={Profile}/>} />
           <Route path="*" element={<ViewNotFound />} />
         </Routes>

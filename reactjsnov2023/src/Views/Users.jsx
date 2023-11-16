@@ -39,7 +39,10 @@ const fetchData = async()=>{
           {userDetails ? (
             userDetails.map((user) => (
               <tr key={user.id}>
-                <td><Link to={`/users/${user.id}`}>{user.id}</Link></td>
+                {/* <td><Link to={`/users/${user.id}`}>{user.id}</Link></td> */}
+                <td>
+                <td><Link to='/userdetails' state={{data:user}}>{user.id}</Link></td>
+                </td>
                 <td>{user.name}</td>
                 <td>{user.username}</td>
               </tr>

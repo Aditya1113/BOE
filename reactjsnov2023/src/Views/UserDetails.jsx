@@ -1,18 +1,17 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useLoaderData, useLocation, useParams } from "react-router-dom";
 
 const UserDetails = () => {
   const [userInfo, setUserInfo] = useState();
 
   //obtaining route parameter
-  const { id } = useParams();
+  // const { id } = useParams();
+  const location = useLocation()
+  // console.log(location.state.data)
 
   useEffect(() => {
-    axios
-      .get(`https://jsonplaceholder.typicode.com/users/${id}`)
-      .then((res) => setUserInfo(res.data))
-      .catch((error) => console.log(error));
+    setUserInfo(location.state.data)
   }, []);
   return (
     <div className="container">
@@ -34,6 +33,7 @@ const UserDetails = () => {
         <h4>Loading.....</h4>
       )}
     </div>
+
   );
 };
 

@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from "react";
-import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Menu = () => {
   const [role, setRole] = useState("");
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const route = useLocation()
+  const route = useLocation();
 
   useEffect(() => {
     let myRole = sessionStorage.getItem("role");
     setRole(myRole);
-  },[route.pathname]);
+  }, [route.pathname]);
 
-  const logout=()=>{
-    sessionStorage.removeItem('role')
-    alert('logout successfully')
-    navigate('/login')
-  }
+  const logout = () => {
+    sessionStorage.removeItem("role");
+    alert("logout successfully");
+    navigate("/login");
+  };
   return (
     <div>
       <nav>
@@ -31,16 +31,20 @@ const Menu = () => {
                   <Link to="/home">Home</Link>
                 </li>
                 <li>
-                    <Link to="/users">Users</Link>
+                  <Link to="/users">Users</Link>
                 </li>
                 {role === "admin" && (
                   <li>
                     <Link to="/about">About</Link>
                   </li>
-                  
                 )}
                 <li>
-                  <button className="orange darken-4 waves-effect btn btn-small" onClick={logout}>Logout</button>
+                  <button
+                    className="orange darken-4 waves-effect btn btn-small"
+                    onClick={logout}
+                  >
+                    Logout
+                  </button>
                 </li>
               </>
             ) : (
