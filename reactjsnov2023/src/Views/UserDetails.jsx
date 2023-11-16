@@ -1,6 +1,5 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link, Outlet, useLoaderData, useLocation, useParams } from "react-router-dom";
+import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 
 const UserDetails = () => {
   const [userInfo, setUserInfo] = useState();
@@ -8,22 +7,32 @@ const UserDetails = () => {
   //obtaining route parameter
   // const { id } = useParams();
   const location = useLocation();
-  // console.log(location.state.data)
+
+  const navigate = useNavigate();
+
+  const personal = {
+    id:userInfo?.id,
+    phone: userInfo?.phone,
+    website: userInfo?.website,
+  };
 
   useEffect(() => {
-    setUserInfo(location.state.data);
+    setUserInfo(location.state?.data);
+    if (location.pathname === "/userdetails") {
+      navigate("/userdetails/personal", { state: { personal: personal } });
+    }
   }, []);
 
-  const personal={
-    phone:userInfo?.phone,
-    website:userInfo?.website
-  }
   return (
     <div className="container">
       {userInfo ? (
         <ul className="collection">
           <li class="collection-item avatar">
-            <img src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553__340.png" alt="" className="circle"/>
+            <img
+              src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553__340.png"
+              alt=""
+              className="circle"
+            />
             <span class="title">{userInfo.name}</span>
             <p>
               {userInfo.email} <br />
@@ -42,22 +51,32 @@ const UserDetails = () => {
         <div className="col s12">
           <ul className="tabs">
             <li className="tab col s3">
-              <Link to='/userdetails/personal' state={{personal:personal}}>Personal</Link>
+              <Link to="/userdetails/personal" state={{ data: personal }}>
+                Personal
+              </Link>
             </li>
             <li className="tab col s3">
-              <Link className="active" to='/userdetails/address' state={{address:userInfo?.address}} >
+              <Link
+                className="active"
+                to="/userdetails/address"
+                state={{ data: userInfo?.address }}
+              >
                 Address
               </Link>
             </li>
 
             <li className="tab col s3">
-            <Link className="active" to='/userdetails/company' state={{company:userInfo?.company}} >
+              <Link
+                className="active"
+                to="/userdetails/company"
+                state={{ data: userInfo?.company }}
+              >
                 Company
               </Link>
             </li>
           </ul>
         </div>
-        <Outlet/>
+        <Outlet></Outlet>
       </div>
     </div>
   );

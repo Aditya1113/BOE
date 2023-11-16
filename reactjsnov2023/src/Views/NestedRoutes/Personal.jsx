@@ -6,8 +6,11 @@ const Personal = () => {
   const location = useLocation()
 
   useEffect(()=>{
-      setPersonal(location.state?.personal)
-  })
+      
+        setPersonal(location.state.personal)
+  },[location.state])
+
+  console.log(personal)
 return (
  <div className="container">
    <ul className="collection">

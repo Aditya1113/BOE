@@ -92,6 +92,7 @@ import UserDetails from "./Views/UserDetails";
 import Personal from "./Views/NestedRoutes/Personal";
 import Address from "./Views/NestedRoutes/Address";
 import Company from "./Views/NestedRoutes/Company";
+import DetailsInfo from "./Views/NestedRoutes/DetailsInfo";
 
 const App = () => {
   return (
@@ -106,9 +107,9 @@ const App = () => {
           <Route path="users" element={<Users />} />
           <Route path="users/:id" element={<UserDetails />} />
           <Route path="userdetails" element={<UserDetails />}>
-            <Route path="personal" element={<Personal />} />
-            <Route path="address" element={<Address/>} />
-            <Route path="company" element={<Company/>} />
+            <Route path="personal" element={<DetailsInfo type='personal' />} />
+            <Route path="address" element={<DetailsInfo type='address'/>} />
+            <Route path="company" element={<DetailsInfo type='company'/>} />
           </Route>
           <Route path="profile" element={<Protected Component={Profile} />} />
           <Route path="*" element={<ViewNotFound />} />
