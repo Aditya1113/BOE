@@ -76,8 +76,9 @@ const UserDetails = () => {
             </li>
           </ul>
         </div>
-        <Outlet></Outlet>
+       
       </div>
+      <Outlet/>
     </div>
   );
 };

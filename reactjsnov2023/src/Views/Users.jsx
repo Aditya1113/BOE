@@ -7,7 +7,7 @@ const Users = () => {
 
 const fetchData = async()=>{
     try{
-        const resposne = await  axios.get("https://jsonplaceholder.typicode.com/users")
+        const resposne = await  axios.get("http://localhost:3001/users")
         // console.log(resposne.data)
         setUserDetails(resposne.data)
     }

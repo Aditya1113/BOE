@@ -34,9 +34,14 @@ const Menu = () => {
                   <Link to="/users">Users</Link>
                 </li>
                 {role === "admin" && (
+                  <>
                   <li>
                     <Link to="/about">About</Link>
                   </li>
+                  <li>
+                  <Link to="/user/create">Add User</Link>
+                </li>
+                </>
                 )}
                 <li>
                   <button

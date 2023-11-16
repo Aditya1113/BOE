@@ -93,6 +93,7 @@ import Personal from "./Views/NestedRoutes/Personal";
 import Address from "./Views/NestedRoutes/Address";
 import Company from "./Views/NestedRoutes/Company";
 import DetailsInfo from "./Views/NestedRoutes/DetailsInfo";
+import AddUser from "./Views/AddUser";
 
 const App = () => {
   return (
@@ -105,8 +106,10 @@ const App = () => {
           <Route path="about" element={<Protected Component={About} />} />
           <Route path="login" element={<Login />} />
           <Route path="users" element={<Users />} />
+          <Route path="user/create" element={<AddUser />} />
           <Route path="users/:id" element={<UserDetails />} />
           <Route path="userdetails" element={<UserDetails />}>
+            <Route index element={<DetailsInfo type='personal' />}/>
             <Route path="personal" element={<DetailsInfo type='personal' />} />
             <Route path="address" element={<DetailsInfo type='address'/>} />
             <Route path="company" element={<DetailsInfo type='company'/>} />
