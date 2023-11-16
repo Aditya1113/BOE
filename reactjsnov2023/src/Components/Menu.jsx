@@ -30,10 +30,14 @@ const Menu = () => {
                 <li>
                   <Link to="/home">Home</Link>
                 </li>
+                <li>
+                    <Link to="/users">Users</Link>
+                </li>
                 {role === "admin" && (
                   <li>
                     <Link to="/about">About</Link>
                   </li>
+                  
                 )}
                 <li>
                   <button className="orange darken-4 waves-effect btn btn-small" onClick={logout}>Logout</button>

@@ -76,7 +76,7 @@
 
 // export default App;
 
-import "./App.css";
+// import "./App.css";
 import React from "react";
 
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
@@ -87,6 +87,7 @@ import Login from "./Views/Login";
 import ViewNotFound from "./Views/ViewNotFound";
 import Profile from "./Views/Profile";
 import Protected from "./Views/Protected";
+import Users from "./Views/Users";
 
 const App = () => {
   return (
@@ -98,6 +99,7 @@ const App = () => {
           <Route path="home" element={<Protected Component={Home}/>} />
           <Route path="about" element={<Protected Component={About}/>}/>
           <Route path="login" element={<Login />} />
+          <Route path="users" element={<Users />} />
           <Route path="profile" element={<Protected Component={Profile}/>} />
           <Route path="*" element={<ViewNotFound />} />
         </Routes>
