@@ -32,6 +32,7 @@ const Users = () => {
       alert(`record no.${id} deleted`)
       fetchData()
     })
+    .catch((error) => console.log(error));
   }
   return (
     <div className="container">
@@ -49,11 +50,11 @@ const Users = () => {
               <tr key={user.id}>
                 {/* <td><Link to={`/users/${user.id}`}>{user.id}</Link></td> */}
                 <td>
-                  <td>
-                    <Link to="/userdetails" state={{ data: user }}>
+                  
+                    <Link to={`/users/${user.id}`}>
                       {user.id}
                     </Link>
-                  </td>
+                 
                 </td>
                 <td>{user.name}</td>
                 <td>{user.username}</td>

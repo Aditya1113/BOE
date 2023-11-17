@@ -1,51 +1,61 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 
 const DetailsInfo = (props) => {
-  const [userInfo, setUserInfo] = useState();
-  const location = useLocation();
+  const [userData, setUserData] = useState();
+
+  // const [userid, setUserId] = useState();
+
+  const { id } = useParams();
 
   useEffect(() => {
-    setUserInfo(location.state?.data);
-  }, [location.state]);
+    // setUserId(id);
+
+    axios
+      .get(`http://localhost:3001/users/${id}`)
+      .then((res) => setUserData(res.data))
+      .catch((error) => console.log(error));
+  }, []);
+
   return (
     <div className="container">
-      {userInfo ? (
+      {userData ? (
         <ul className="collection">
-          <li class="collection-item avatar">
-            <span class="title">
+          <li className="collection-item avatar">
+            <span className="title">
               {props.type === "personal"
-                ? `Id=${userInfo.id}`
+                ? `Id=${userData?.id}`
                 : props.type === "address"
-                ? `Street=${userInfo.street}`
-                : `Name=${userInfo.name}`}
+                ? `Street=${userData?.address?.street}`
+                : `Name=${userData?.name}`}
             </span>
 
             <p>
               {props.type === "personal" ? (
                 <>
-                  Phone = {userInfo.phone}
+                  Phone = {userData?.phone}
                   <br />
-                  website = {userInfo.website}
+                  website = {userData?.website}
                 </>
               ) : props.type === "address" ? (
                 <>
-                  City = {userInfo.city}
+                  City = {userData?.address?.city}
                   <br />
-                  Zipcode = {userInfo.zipcode}
+                  Zipcode = {userData?.address?.zipcode}
                 </>
               ) : (
                 <>
-                  Description = {userInfo.catchPhrase}
+                  Description = {userData?.company?.catchPhrase}
                   <br />
-                  Work = {userInfo.bs}
+                  Work = {userData?.company?.bs}
                 </>
               )}
             </p>
           </li>
         </ul>
       ) : (
-        <h4>Loading...</h4>
+        <h4>Loading......</h4>
       )}
     </div>
   );

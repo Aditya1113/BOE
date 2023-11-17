@@ -1,48 +1,53 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link, Outlet, Route, useLocation, useNavigate } from "react-router-dom";
+import { Link, Outlet, Route, useLocation, useNavigate, useParams } from "react-router-dom";
 
 const UserDetails = () => {
   const [userInfo, setUserInfo] = useState({});
 
   //obtaining route parameter
-  // const { id } = useParams();
-  const location = useLocation();
+  const { id } = useParams();
+  // const location = useLocation();
 
   const navigate = useNavigate();
 
-  const personal = {
-    id:userInfo?.id,
-    phone: userInfo?.phone,
-    website: userInfo?.website,
-  };
+  // const personal = {
+  //   id:userInfo?.id,
+  //   phone: userInfo?.phone,
+  //   website: userInfo?.website,
+  // };
+
+  // const company = {
+  //   name:userInfo?.name,
+  //  catchPhrase: userInfo?.catchPhrase,
+  //   bs: userInfo?.bs,
+  // };
+
+  // console.log(location.state?.data)
 
   useEffect(() => {
-
-    const userData = location.state?.data;
-
-    if(userData){
-    setUserInfo(location.state?.data);
-    }
-   
-  }, [location.state?.data,location.pathname]);
+     
+    axios.get(`http://localhost:3001/users/${id}`)
+    .then(res=>setUserInfo(res.data))
+  }, []);
 
   return (
     <div className="container">
       {userInfo ? (
         <ul className="collection">
-          <li class="collection-item avatar">
+          <li className="collection-item avatar">
             <img
               src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553__340.png"
               alt=""
               className="circle"
             />
-            <span class="title">{userInfo.name}</span>
+            <span className="title">{userInfo.name}</span>
             <p>
               {userInfo.email} <br />
               {userInfo.username}
             </p>
-            <a href="#!" class="secondary-content">
-              <i class="material-icons">grade</i>
+            <a href="#!" className="secondary-content">
+              <i className="material-icons">grade</i>
             </a>
           </li>
         </ul>
@@ -54,15 +59,14 @@ const UserDetails = () => {
         <div className="col s12">
           <ul className="tabs">
             <li className="tab col s3">
-              <Link to="/userdetails/personal" state={{ data: personal }}>
+              <Link to={`/users/${userInfo.id}/personal`}>
                 Personal
               </Link>
             </li>
             <li className="tab col s3">
               <Link
                 className="active"
-                to="/userdetails/address"
-                state={{ data: userInfo?.address }}
+                to={`/users/${userInfo.id}/address`}
               >
                 Address
               </Link>
@@ -71,8 +75,7 @@ const UserDetails = () => {
             <li className="tab col s3">
               <Link
                 className="active"
-                to="/userdetails/company"
-                state={{ data: userInfo?.company }}
+                to={`/users/${userInfo.id}/company`}
               >
                 Company
               </Link>

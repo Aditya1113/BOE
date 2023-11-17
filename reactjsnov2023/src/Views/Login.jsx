@@ -37,6 +37,7 @@ const Login = () => {
             id="email"
             type="email"
             name="email"
+            autoComplete="true"
             className="validate"
             onChange={handleChange}
           />
@@ -50,6 +51,7 @@ const Login = () => {
             id="password"
             type="password"
             name="password"
+            autoComplete="true"
             className="validate"
             onChange={handleChange}
           />

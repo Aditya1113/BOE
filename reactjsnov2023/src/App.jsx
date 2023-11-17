@@ -76,7 +76,7 @@
 
 // export default App;
 
-// import "./App.css";
+import "./App.css";
 import React from "react";
 
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
@@ -109,8 +109,9 @@ const App = () => {
           <Route path="users" element={<Users />} />
           <Route path="user/create" element={<AddUser />} />
           <Route path="users/user/edit" element={<EditUser />} />
-          <Route path="users/:id" element={<UserDetails />} />
-          <Route path="userdetails" element={<UserDetails />}>
+
+          {/* <Route path="userdetails/:id" element={<UserDetails />}> */}
+          <Route path="users/:id" element={<UserDetails/>}>
             <Route index element={<DetailsInfo type='personal' />}/>
             <Route path="personal" element={<DetailsInfo type='personal' />} />
             <Route path="address" element={<DetailsInfo type='address'/>} />
