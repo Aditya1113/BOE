@@ -1,19 +1,23 @@
 import React from "react";
 import { Provider } from "react-redux";
-import CakeContainer from "./Cake/CakeContainer";
-import IceCreamContainer from "./Cake/IceCream/IceCreamContainer";
-import store from "./Store";
+
+
+import User_Saga from "./Redux_Saga/User_Saga";
+import store from "./store";
+
+
 
 const App = () => {
   return (
-    <div>
+    
       <Provider store={store}>
-        <CakeContainer />
-        <IceCreamContainer/>
+        {/* <CakeContainer />
+        <IceCreamContainer/> */}
         {/* <br/> */}
         {/* <TestContainer/> */}
+        <User_Saga/>
       </Provider>
-    </div>
+
   );
 };
 
