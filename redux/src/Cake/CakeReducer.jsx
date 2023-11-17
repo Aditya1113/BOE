@@ -2,7 +2,7 @@ import { BUY_CAKE } from "./cakeActionType"
 
 
 export const inititalState = {
-    numberOfCakes : 60
+    numberOfCakes : 40
 }
 
 const cakeReducer = (state=inititalState,action)=>{
