@@ -1,4 +1,4 @@
-import { act } from "react-dom/test-utils"
+
 import { BUY_CAKE, BUY_CANDLE } from "./cakeActionType"
 
 
