@@ -1,4 +1,6 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { buyIceCream } from "./IceCreamAction";
 
 const IceCreamContainer = () => {
   const result = useSelector((state) => state);
@@ -8,11 +10,11 @@ const IceCreamContainer = () => {
   return (
     <div className="container">
       <h3 className="blue-text text-darken-3">
-        Number of IceCream : {result.numberOfIceCream}
+        Number of IceCream : {result.ice.numberOfIceCream}
       </h3>
 
       <button
-        onClick={() => dispatch(buyCake(qty))}
+        onClick={() => dispatch(buyIceCream())}
         className="wave-effect wave-light btn-purple"
       >
         Buy IceCream

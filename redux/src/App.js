@@ -1,7 +1,7 @@
 import React from "react";
 import { Provider } from "react-redux";
 import CakeContainer from "./Cake/CakeContainer";
-import TestContainer from "./Cake/TestContainer";
+import IceCreamContainer from "./Cake/IceCream/IceCreamContainer";
 import store from "./Store";
 
 const App = () => {
@@ -9,6 +9,7 @@ const App = () => {
     <div>
       <Provider store={store}>
         <CakeContainer />
+        <IceCreamContainer/>
         {/* <br/> */}
         {/* <TestContainer/> */}
       </Provider>
