@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import getUsers from './requests/getUsers'
+import {getUsers} from './action/getUsers'
 
 const User_Saga = () => {
 

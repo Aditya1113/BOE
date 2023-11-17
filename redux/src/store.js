@@ -1,28 +1,21 @@
-// import { applyMiddleware, legacy_createStore as createStore} from 'redux'
-// import logger from 'redux-logger';
+// --Saga Configuration
 
-// import RootReducer from './RootReducer';
+import { legacy_createStore as createStore, applyMiddleware } from "redux";
 
-// const store = createStore(RootReducer,applyMiddleware(logger))
-
-// export default store
-
-
-//Saga Configuration
-
-import createSagaMiddleware from 'redux-saga';
-import { applyMiddleware, legacy_createStore as createStore} from 'redux'
-import { composeWithDevTools } from '@redux-devtools/extension/';
-// import logger from 'redux-logger';
-import { watcherSaga } from './Redux_Saga/sagas/rootSaga';
+import { composeWithDevTools } from "@redux-devtools/extension";
+import createSagaMiddleware from "redux-saga";
+import { watcherSaga } from "./Redux_Saga/sagas/rootSaga";
+import userReducer from "./Redux_Saga/reducers/userReducer";
 
 
-import userReducer from './Redux_Saga/reducers/userReducer';
-const sagaMiddleware = createSagaMiddleware();
-const middleware = [sagaMiddleware]
+const sagaMiddlware = createSagaMiddleware();
+const middleware = [sagaMiddlware];
 
-const store = createStore(userReducer,composeWithDevTools(applyMiddleware(...middleware)))
+const store = createStore(
+  userReducer,
+  composeWithDevTools(applyMiddleware(...middleware))
+);
 
-sagaMiddleware.run(watcherSaga)
+sagaMiddlware.run(watcherSaga);
 
-export default store
+export default store;

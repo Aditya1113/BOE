@@ -2,7 +2,7 @@ import { GET_USERS_FAILURE, GET_USERS_START, GET_USERS_SUCCESS } from "../action
 
 export const getUsers = ()=>{
     return {
-        type : GET_USERS_START,
+        type : GET_USERS_START
         
     }
 }
