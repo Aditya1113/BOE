@@ -1,3 +1,4 @@
+import { act } from "react-dom/test-utils"
 import { BUY_CAKE, BUY_CANDLE } from "./cakeActionType"
 
 
@@ -13,7 +14,7 @@ const cakeReducer = (state=inititalState,action)=>{
                 case BUY_CAKE:
                     return {
                         ...state,
-                        numberOfCakes : state.numberOfCakes - 1
+                        numberOfCakes : state.numberOfCakes - action.payload
                     }
                 case BUY_CANDLE:
                     return {
